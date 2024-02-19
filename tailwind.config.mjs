@@ -20,6 +20,9 @@ export default {
 				"olive":"#3C3318"
 			  }
 		},
+		fontFamily:{
+			playFair:["Playfair Display", "serif"],
+		}
 	},
 	plugins: [],
 }

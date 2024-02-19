@@ -1,8 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ServicesDesktop from '../components/utils/ServicesDesktop.astro'
+import Section from '../components/utils/Section.astro'
 ---
 
 <Layout title="Almondd | Home">
+	
+
+	<Section classProps="hidden md:block">
+
+	
 		<div class="wrapper">
 			<div class="container scrollx">
 				<section class="sec1 pin">
@@ -180,39 +187,8 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</section>
 
-		<section class="services-section" id="services">
-			<h1>
-				<div>
-					<span>You can</span>
-				</div>
-				<div>
-					<span class="f-pl">Benefit &nbsp;</span>
-					<span>from</span>
-				</div>
-				<div>
-					<span>our &nbsp;</span>
-					<span>Customize</span>
-				</div>
-				<div>
-					<span class="f-pl">Design Services</span>
-				</div>
-			</h1>
-		</section>
 
-		<section class="services-image">
-			<div class="image-container">
-				<div>
-					<img src="./assets/27.png" alt="branding" />
-				</div>
-				<div>
-					<img src="./assets/39.png" alt="Digital Products" />
-				</div>
-				<div>
-					<img src="./assets/29.png" alt="branding" />
-				</div>
-			</div>
-		</section>
-
+		<ServicesDesktop/>
 
 		<div id="cta" class="cta-section">
 			<h1>
@@ -222,7 +198,7 @@ import Layout from "../layouts/Layout.astro";
 				</div>
 				<div>
 					<span>We'd love to</span>
-					<span class="f-pl">work &nbsp;</span>
+					<span class="f-pl">work &nbsp</span>
 					<span>with you</span>
 				</div>
 			</h1>
@@ -234,5 +210,14 @@ import Layout from "../layouts/Layout.astro";
 				<button id="open-btn">Lets Connect</button>
 			</a>
 		</div>
+
+	</Section>
+
+<Section classProps="block md:hidden">
+	<section data-lenis-prevent-wheel style="height:400vh; background:green;">
+
+	</section>
+
+</Section>
 	
 </Layout>

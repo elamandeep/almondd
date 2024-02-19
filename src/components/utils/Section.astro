@@ -1,0 +1,18 @@
+---
+interface Props {
+    classProps:string;
+}
+
+const {classProps} = Astro.props
+
+---
+
+ <!--  -->
+<section class={classProps}>
+    <slot/>
+</section>
+
+<style lang="css" scoped>
+    @tailwind components;
+    @tailwind utilities;
+</style>
