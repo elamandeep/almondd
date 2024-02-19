@@ -1,0 +1,47 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Navbar from '../components/Navbar/Navbar.astro'
+import "../styles/index.scss";
+import '../styles/tailwind.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+	</head>
+
+	<body>
+		<main>
+			<Navbar/>
+			<slot />
+		</main>
+	</body>
+	<script
+		is:inline
+		src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"
+	></script>
+	<script
+		is:inline
+		src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+		integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+		crossorigin="anonymous"
+		referrerpolicy="no-referrer"></script>
+	<script
+		is:inline
+		src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+		integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+		crossorigin="anonymous"
+		referrerpolicy="no-referrer"></script>
+	<script src="../scripts/index.js"></script>
+</html>
