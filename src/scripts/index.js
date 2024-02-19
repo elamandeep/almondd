@@ -24,13 +24,6 @@ lenis.on('scroll', (e) => {
 })
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    lenis.scrollTo(0)
-})
-
-
-
-
 //* registering Gsap scrolltrigger plugin
 
 gsap.registerPlugin(ScrollTrigger);
