@@ -14,9 +14,9 @@ import Navbar from '../components/Navbar/Navbar.astro'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{title}</title>
 		
 	</head>
@@ -499,69 +499,36 @@ font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: 640px) {
+            padding: 2rem;
+            align-items: start;
+            
+    }
 }
 
 .form-header {
+    
     h1 {
         font-size: 5rem;
+        text-align: center;
+    
 
         span {
             @extend h1;
         }
+
+        @media screen and (max-width: 640px) {
+            font-size: 3rem;
+            text-align: center;
+    
+        }
     }
 
 
 }
 
 
-.form-content {
-    width: 100% ;
-    padding: 5rem 10rem;
-    display: grid;
-    gap: 2rem;
-    label {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-
-        input{
-            background: none;
-            border:0px;
-            border-bottom: 1px solid $goldyellow;
-            color:$goldyellow;
-            font-weight: 500;
-            &:focus{
-                    outline: none;
-            }
-        }
-        
-        &:nth-child(5){
-            div{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-        }
-
-        &>* {
-
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-    }
-
-
-    button{
-        padding: 1rem;
-        background-color: $goldyellow;
-        font-size: 1.2rem;
-        font-weight: bold;
-        border: 0;
-        cursor: pointer;
-    }
-
-}
 
 textarea{
     background: none;
@@ -581,6 +548,18 @@ textarea{
     padding: 2px; /* Adds 2px padding */
     border-color: $goldyellow; /* Sets the border color to gold/yellow */
     border-radius: 4px; 
+}
+
+
+.btn {
+
+        padding: 1rem;
+        background-color: $goldyellow;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: 0;
+        cursor: pointer;
+
 }
 
 .select-control{
@@ -619,10 +598,131 @@ textarea{
 }
 
 
-@media (min-width: 640px) {
-    .form-content{
-        
-    }
 
+.modal {
+  background-color: $violet;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  height: 100vh;
+  overflow-y: auto;
+  width: 100%;
+  font-family: $gt-font;
+  color:$goldyellow;
 }
+
+.modal-content {
+  font-family: $gt-font;
+  font-weight: 600;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-evenly;
+  margin: 3rem 5%;
+}
+
+/* Media Query for Medium (md) screens and above */
+@media screen and (min-width: 768px) {
+  .modal-content {
+    margin: 3rem 20%;
+  }
+}
+
+
+/* Add your additional styles for the labels, inputs, and other elements as needed */
+
+/* Example media query for smaller screens (adjust as needed) */
+@media screen and (max-width: 767px) {
+  .modal-content {
+    margin: 3rem 5%;
+  }
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+
+    span{
+        display: block;
+    }
+    input{
+        background: none;
+        border: 0px;
+        border-bottom: 1px solid $goldyellow;
+        outline: none;
+        color: $goldyellow;
+    }
+}
+
+/* Media Query for Medium (md) screens and above */
+@media screen and (min-width: 768px) {
+
+
+  label.grid > span {
+    font-size: 1.25rem; /* md:text-xl */
+  }
+
+  label.grid > input {
+    font-size: 1.25rem; /* md:text-xl */
+  }
+}
+
+
+
+/* Styles for the Select component (adjust as needed) */
+label.grid.space-y-3 > div.Select {
+  position: relative;
+  width: 100%;
+}
+
+label.grid.space-y-3 > div.Select > div {
+  display: flex;
+  align-items: center;
+}
+
+label.grid.space-y-3 > div.Select > div > div {
+  flex: 1;
+}
+
+label.grid.space-y-3 > div.Select > div > div input {
+  background: transparent;
+  color: $goldyellow; /* text-goldyellow */
+  border: none;
+  outline: none;
+  font-size: 1rem; /* text-md */
+}
+
+label.grid.space-y-3 > div.Select > div > div input:focus {
+  border-bottom: 1px solid $goldyellow; /* border-goldyellow/40 */
+}
+
+label.grid.space-y-3 > div.Select > div > div input[disabled] {
+  background: transparent;
+  color: #9ca3af; /* placeholder:text-white */
+}
+
+/* Styles for the dropdown menu (adjust as needed) */
+label.grid.space-y-3 > div.Select > div > div.Select-menu-outer {
+  background-color: rgba(0, 0, 0, 0.3); /* bg-black/30 */
+  backdrop-filter: blur(8px); /* backdrop-blur-lg */
+  color: $goldyellow; /* text-goldyellow */
+}
+
+label.grid.space-y-3 > div.Select > div > div.Select-option {
+  padding: 1rem; /* p-3 */
+}
+
+/* Media Query for Medium (md) screens and above */
+@media screen and (min-width: 768px) {
+  label.grid.space-y-3 {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+
+
+
+
 </style>
