@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import ServicesDesktop from '../components/utils/ServicesDesktop.astro'
 import Section from '../components/utils/Section.astro'
+import OverlappingSection from '../components/mobile/OverlappingSection.astro'
+import ProblemSection from '../components/mobile/ProblemSection.astro'
+import ServicesMobile from '../components/mobile/ServicesMobile.astro'
+import CtaMobileSection from '../components/mobile/CtaMobileSection.astro'
 ---
 
 <Layout title="Almondd | Home">
@@ -214,25 +218,11 @@ import Section from '../components/utils/Section.astro'
 	</Section>
 
 <Section classProps="block md:hidden">
-	<section data-lenis-prevent-wheel style="height:auto; background:green;">
-			<h1 style="font-size:10rem">
-					hello world
-			</h1> 
-			<h1 style="font-size:10rem">
-					hello world
-			</h1> 
-			<h1 style="font-size:10rem">
-					hello world
-			</h1> 
-			<h1 style="font-size:10rem">
-					hello world
-			</h1> 
-			<h1 style="font-size:10rem">
-					hello world
-			</h1> 
-			<h1 style="font-size:10rem">
-					hello world
-			</h1> 
+	<section data-lenis-prevent-wheel style="height:auto; ">
+		<OverlappingSection/>
+		<ProblemSection/>
+		<ServicesMobile/>
+		<CtaMobileSection/>
 	</section>
 
 </Section>

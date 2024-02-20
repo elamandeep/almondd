@@ -1,0 +1,59 @@
+<div id="cta" class="h-screen bg-lightblack text-white flex flex-col justify-center items-center space-y-10">
+    <h1 class="  text-center">
+        <div class="overflow-y-hidden">
+            <span class="italic-text anim">
+                Ready
+            </span>
+            <span class="uppercase anim">to connect? </span>
+        </div>
+
+        <div class="overflow-y-hidden">
+            <span class="uppercase anim">
+                Wed love to
+            </span>
+            <span class="italic-text anim">
+                work
+            </span>
+            <span class="uppercase anim">
+                with you
+            </span>
+        </div>
+    </h1>
+    <img src="/assets/meme.png" alt="CTA meme" width="300" height="200" />
+    <a href="/contact">
+        <button class="bg-lightpink text-black border-none   py-3 px-6 rounded-full uppercase">Lets Connect</button>
+    </a>
+</div>
+
+
+<style lang="css" scoped>
+    @tailwind components;
+    @tailwind utilities;
+  
+   
+  @layer components{
+    .italic-text{
+    @apply font-playFair italic mx-1 font-semibold;
+  }
+  .list{
+    @apply relative ml-1;
+  }
+  .item{
+    @apply absolute top-0 left-0 text-pink-700 text-4xl align-middle;
+  }
+
+  h1{
+    padding: 10px 6px;
+
+  }
+
+  div, div>*{
+    font-size: 2.5rem;
+ 
+  }
+
+ 
+  
+
+  }
+</style> 

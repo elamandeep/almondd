@@ -84,3 +84,21 @@ ScrollTrigger.create({
 
 
 
+//? overlapping section
+
+
+
+
+    let overlappingSection = gsap.utils.toArray(".sections");
+    // we'll create a ScrollTrigger for each panel just to track when each panel's top hits the top of the viewport (we only need this for snapping)
+    let tops = overlappingSection.map(panel => ScrollTrigger.create({ trigger: panel, start: "top top" }));
+
+    overlappingSection.forEach((section, i) => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: () => section.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+            pin: true,
+            pinSpacing: false
+        });
+    });
+

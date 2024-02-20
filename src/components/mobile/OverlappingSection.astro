@@ -1,0 +1,61 @@
+
+<section class="font-semibold bg-darkred h-screen flex justify-center items-center sections">
+    <h1 class="text-lightpink text-[4rem] uppercase font-bold">
+        Hello <br /> There:)
+    </h1>
+</section>
+<section class="font-semibold bg-black h-screen flex justify-center items-center sections px-3">
+    <p class="text-white  text-center   uppercase font-bold">
+        <span class="italic-text capitalize">
+            Weather
+        </span>
+        you
+        <span class="italic-text lowercase">are a</span>
+        startup, MVPS
+        <span class="italic-text lowercase">
+            or
+        </span>
+        Season Business
+    </p>
+</section>
+
+<section class="bg-darkgreen h-screen flex justify-center items-center sections px-3">
+    <p class="text-white font-bold text-center uppercase  ">
+        We have the
+        <span class="italic-text lowercase">
+            design solutions
+        </span>
+
+        for any project you have in mind!
+
+    </p>
+</section>
+
+
+
+<style lang="css" scoped>
+    @tailwind components;
+    @tailwind utilities;
+
+    div>*{
+        font-size: 6rem;
+    }
+
+  @layer components{
+    .italic-text{
+    @apply font-playFair italic  mx-3 font-semibold;
+  }
+  .list{
+    @apply relative ml-1;
+  }
+  .item{
+    @apply absolute top-0 left-0 text-pink-700 text-4xl align-middle;
+  }
+
+  p>*,p{
+    font-size: 3rem;
+  }
+  
+
+  }
+</style> 
